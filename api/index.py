@@ -8,10 +8,5 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/clicked")
-def clicked():
-    return "Clicked"
-
-
 if __name__ == "__main__":
     app.run()
