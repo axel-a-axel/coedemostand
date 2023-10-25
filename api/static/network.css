@@ -1,0 +1,34 @@
+/* Use flexbox to create vertical sections */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* full viewport height */
+}
+
+/* Assign equal height to each section */
+.section {
+  flex: 1;
+}
+
+/* Add some padding and center the content */
+.section-content {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the input and button elements */
+input, button {
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* Add some margin to the button */
+button {
+  margin-left: 10px;
+}
+
+/* Style the error message with red bold text */
+#error {
+  color: red;
+  font-weight: bold;
+}
