@@ -60,76 +60,77 @@ function sendData(event) {
   // Use the fetch API to send a POST request to the Flask backend
   // Set the method, headers and body options
   var options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  };
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  //correct: body: JSON.stringify(data)
+  body: JSON.stringify('some random set of characters instead of anything meaningful')
+};
 
-  // Use the fetch API to get the response
-  fetch(url, options)
-    .then(response => {
-      // Check if the response is ok (status code 200)
-      if (response.ok) {
-        // Return the response as JSON object
-        return response.json();
-      } else {
-        // Throw an error with the status text
-        throw new Error(response.statusText);
-      }
-    })
-    .then(data => {
-      // Handle the data
-      console.log(data);
+// Use the fetch API to get the response
+fetch(url, options)
+  .then(response => {
+    // Check if the response is ok (status code 200)
+    if (response.ok) {
+      // Return the response as string
+      return response.text();
+    } else {
+      // Throw an error with the status text
+      throw new Error(response.statusText);
+    }
+  })
+  .then(data => {
+    // Handle the data
+    console.log(data);
 
-      // Display a modal window with the data as text
+    // Display a modal window with the data as text
 
-      // Create a div element for the modal background
-      var modalBg = document.createElement("div");
-      // Set some attributes and styles for the modal background
-      modalBg.id = "modal-bg";
-      modalBg.style.position = "fixed";
-      modalBg.style.top = "0";
-      modalBg.style.left = "0";
-      modalBg.style.width = "100%";
-      modalBg.style.height = "100%";
-      modalBg.style.backgroundColor = "rgba(0,0,0,0.5)";
+    // Create a div element for the modal background
+    var modalBg = document.createElement("div");
+    // Set some attributes and styles for the modal background
+    modalBg.id = "modal-bg";
+    modalBg.style.position = "fixed";
+    modalBg.style.top = "0";
+    modalBg.style.left = "0";
+    modalBg.style.width = "100%";
+    modalBg.style.height = "100%";
+    modalBg.style.backgroundColor = "rgba(0,0,0,0.5)";
 
-      // Create a div element for the modal content
-      var modalContent = document.createElement("div");
-      // Set some attributes and styles for the modal content
-      modalContent.id = "modal-content";
-      modalContent.style.position = "absolute";
-      modalContent.style.top = "50%";
-      modalContent.style.left = "50%";
-      modalContent.style.transform = "translate(-50%, -50%)";
-      modalContent.style.backgroundColor = "#fff";
-      modalContent.style.padding = "20px";
+    // Create a div element for the modal content
+    var modalContent = document.createElement("div");
+    // Set some attributes and styles for the modal content
+    modalContent.id = "modal-content";
+    modalContent.style.position = "absolute";
+    modalContent.style.top = "50%";
+    modalContent.style.left = "50%";
+    modalContent.style.transform = "translate(-50%, -50%)";
+    modalContent.style.backgroundColor = "#fff";
+    modalContent.style.padding = "20px";
 
-      // Create a p element for the text
-      var text = document.createElement("p");
-      // Set some attributes and styles for the text
-      text.id = "text";
-      text.textContent = data;
+    // Create a p element for the text
+    var text = document.createElement("p");
+    // Set some attributes and styles for the text
+    text.id = "text";
+    text.textContent = data;
 
-      // Append the text to the modal content
-      modalContent.appendChild(text);
+    // Append the text to the modal content
+    modalContent.appendChild(text);
 
-      // Append the modal content to the modal background
-      modalBg.appendChild(modalContent);
+    // Append the modal content to the modal background
+    modalBg.appendChild(modalContent);
 
-      // Append the modal background to the body element
-      document.body.appendChild(modalBg);
+    // Append the modal background to the body element
+    document.body.appendChild(modalBg);
 
-    })
-    .catch(error => {
-      // Handle any errors
-      console.error(error);
-    });
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
 
-  // Clear the input value
-  dataInput.value = "";
+// Clear the input value
+dataInput.value = "";
 }
 
 // Add a submit event listener to the form element
@@ -149,4 +150,6 @@ window.addEventListener("click", function(event) {
     }
   }
 });
+
+
 });

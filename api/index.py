@@ -11,7 +11,8 @@ def page_not_found(*args):
 @app.route("/submit", methods=["POST"])
 def post():
   data = request.get_data(as_text=True)
-  return json.dumps({"message": "Its so nice from your side to send me {}".format(data)})
+  data = f"Its so nice from your side to send me {data}"
+  return data #json.dumps({"message": data})
 
 
 @app.route("/getimage", methods=["GET"])
