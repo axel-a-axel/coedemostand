@@ -9,7 +9,7 @@ function fetchImage() {
   // I am so lazy developer, so I will leave the correct part of the URL in the comment
   // and the correct URL part is "/getimage"
   // hope someone will fix it later
-  var url = "http://127.0.0.1:5000/some_random_url";
+  var url = "/some_random_url";
 
   // Use the fetch API to get the response
   fetch(url)
@@ -55,7 +55,7 @@ function sendData(event) {
   var data = dataInput.value;
 
   // Use your Flask backend URL here
-  var url = "http://127.0.0.1:5000/submit";
+  var url = "/submit";
 
   // Use the fetch API to send a POST request to the Flask backend
   // Set the method, headers and body options
