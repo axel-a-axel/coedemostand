@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Click me</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <title>Clickable Button with Non-Overlapping Red Rectangle</title>
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  <script src="../static/script.js"></script>
 </head>
 <body>
-    <h1>Click me</h1>
-
-    <button id="click-me">Click me</button>
-    <div id="message"></div>
+  <div class="container">
+    <div class="red-rectangle"></div>
+    <button id="myButton" disabled>Click Me!</button>
+    <div id="clicked-text"></div>
+  </div>
 </body>
 </html>
