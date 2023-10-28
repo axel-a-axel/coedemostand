@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Clickable Button with Non-Overlapping Red Rectangle</title>
-  <link rel="stylesheet" type="text/css" href="../static/style.css">
-  <script src="../static/script.js"></script>
+	<title>Button and Modal Window</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <script src="../static/script.js"></script>
 </head>
-<body>
-{% include "header.html" %}
-  <div class="container">
-    <div class="red-rectangle"></div>
-    <button id="myButton" disabled>Click Me!</button>
-    <div id="clicked-text"></div>
-  </div>
+<body onload="showModal()">
+    {% include "header.html" %}
+	<button id="button" disabled>Click me</button>
+
+	<div id="modal">
+		<p>Modal window is a bit sorry for not letting you to find the button</p>
+
+		<button disabled onclick="closeModal()">Close</button>
+	</div>
+
+
 </body>
 </html>

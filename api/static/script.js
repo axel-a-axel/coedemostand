@@ -1,13 +1,18 @@
+function showModal() {
+	document.getElementById("modal").style.display = "block";
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+	document.getElementById("modal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-  // Get the button element by its id
-
-const button = document.getElementById("myButton");
-const clickedText = document.getElementById("clicked-text");
-
-button.addEventListener("click", () => {
-    clickedText.innerHTML = "Great, this task is completed!";
-    setTimeout(() => {
-        clickedText.innerHTML = "";
-    }, 3000);
-});
+    document.getElementById("button").addEventListener("click", function() {
+        document.getElementById("button").innerHTML = "Well, you clicked me...";
+        setTimeout(function() {
+            document.getElementById("button").innerHTML = "Click me";
+        }, 3000);
+    });
 });
