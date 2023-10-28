@@ -6,7 +6,7 @@ var image = document.getElementById("image");
 var error = document.getElementById("error");
 
 function fetchImage() {
-  // I am so lazy developer, so I will leave the correct part of the URL in the comment
+  // Imma kinda lazy developer, so I will leave the correct part of the URL in the comment
   // and the correct URL part is "/getimage"
   // hope someone will fix it later
   var url = "/some_random_url";

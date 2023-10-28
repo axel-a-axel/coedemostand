@@ -1,0 +1,26 @@
+.header {
+    background-color: #fafafa;
+    height: 2 * (img.logo.height);
+    width: 100%;
+    display: flex;
+    border-bottom: 3px  solid grey;
+
+}
+
+.logo {
+    width: 45px;
+    height: 70px;
+    float: left;
+}
+
+.company-name {
+
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+
+  margin-left: 45px;
+  font-size: 2rem;
+  text-align: left;
+}
+
