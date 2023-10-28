@@ -4,8 +4,9 @@ function showModal() {
 }
 
 function closeModal() {
-	document.getElementById("modal").style.display = "none";
-    document.body.style.overflow = "auto";
+	//document.getElementById("modal").style.display = "none";
+    //document.body.style.overflow = "auto";
+    console.error("Failed to close dialog::ERR_NopeBro -- Closing a dialog with a single click would be too easy")
 }
 
 document.addEventListener("DOMContentLoaded", function() {
