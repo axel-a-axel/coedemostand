@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file, make_response
 import json
 app = Flask(__name__)
 
@@ -33,6 +33,20 @@ def index():
 @app.route("/2")
 def network():
     return render_template("network.html")
+
+
+@app.route('/cookie')
+def cookie():
+    cookie_value = request.cookies.get('suspiciousCookie')
+    if cookie_value is None:
+        response = make_response(render_template('cookiebad.html', button=True))
+        response.set_cookie('suspiciousCookie', 'incorrect value')
+        return response
+    elif cookie_value == 'correct value':
+        return render_template('cookiebad.html', button=False)
+    else:
+        return render_template('cookiebad.html', button=True)
+
 
 if __name__ == "__main__":
     app.run()

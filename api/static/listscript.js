@@ -12,4 +12,8 @@ button2.addEventListener("click", () => {
     window.open("/2", "_blank")
 });
 
+button3.addEventListener("click", () => {
+    window.open("/cookie", "_blank")
+});
+
 });

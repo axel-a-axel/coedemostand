@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image and Background Color Change</title>
+    <link rel="stylesheet" type="text/css" href="../static/cookiebadstyle.css">
+    <script src="../static/cookiebadscript.js"></script>
+</head>
+<body>
+{% include "header.html" %}
+    <div class="container">
+        <img src="static/biscuits.gif" alt="Image" class="image">
+        {% if button %}
+        <button onclick="location.reload()">Try again</button>
+        {% else %}
+        <p>Good one! Passed</p>
+        {% endif %}
+
+    </div>
+
+
+</body>
+</html>
