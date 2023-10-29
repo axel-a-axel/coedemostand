@@ -35,6 +35,11 @@ def network():
     return render_template("network.html")
 
 
+@app.route("/requestoverload")
+def requestoverload():
+    return render_template("requestoverload.html")
+
+
 @app.route('/cookie')
 def cookie():
     cookie_value = request.cookies.get('suspiciousCookie')
@@ -46,6 +51,22 @@ def cookie():
         return render_template('cookiebad.html', button=False)
     else:
         return render_template('cookiebad.html', button=True)
+
+@app.route("/cats/cats/cats/dogs/cats")
+def catscats():
+    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+
+
+@app.route("/donotrequestthispagepls")
+def donotrequest():
+    return json.dumps({'failure':"I asked not to request this!"}), 418, {'ContentType':'application/json'}
+
+
+@app.route("/requestsuccess", methods=["POST"])
+def requestsuccess():
+    return json.dumps({'success':"Good! TBD replaced with sth valid"}), 201, {'ContentType':'application/json'}
+
+
 
 
 if __name__ == "__main__":

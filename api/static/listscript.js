@@ -16,4 +16,9 @@ button3.addEventListener("click", () => {
     window.open("/cookie", "_blank")
 });
 
+
+button4.addEventListener("click", () => {
+    window.open("/requestoverload", "_blank")
+});
+
 });
