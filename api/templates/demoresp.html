@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Page</title>
+    <link rel="stylesheet" type="text/css" href="../static/demorespstyle.css">
+    <script src="../static/demorespscript.js"></script>
+	<link rel="icon" type="image/x-icon" href="/static/favicon.png">
+</head>
+<body>
+{% include "header.html" %}
+    <div class="container">
+        <form id="form" action="/demoresponse" method="POST">
+            <label for="name">Fill in your name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" pattern="[A-Za-z]{1,255}" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="label-container">
+            <label id="label" onclick="copyToClipboard()">
+                <img width=30px height=30px src="{{ url_for('static', filename='copy.svg') }}" alt="clipboard icon">
+                {% if message %}
+                <p>{{message}}</p>
+                {% else %}
+                <br>
+                {% endif %}
+            </label>
+        </div>
+    </div>
+
+
+</body>
+</html>

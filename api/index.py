@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, send_file, make_response
 import json
+from datetime import datetime
+from cryptography.fernet import Fernet
+
+
 app = Flask(__name__)
 
 
@@ -65,6 +69,31 @@ def donotrequest():
 @app.route("/requestsuccess", methods=["POST"])
 def requestsuccess():
     return json.dumps({'success':"Good! TBD replaced with sth valid"}), 201, {'ContentType':'application/json'}
+
+
+
+
+
+
+@app.route("/demoresponse", methods=["GET", "POST"])
+def send_response():
+    if request.method == "GET":
+        return render_template("demoresp.html", message='')
+    elif request.method == "POST":
+        name = request.form['name']
+    
+        # Add timestamp to the received string
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        message = f'{name} ({timestamp})'
+
+        # Encrypt the message using cryptography library
+        key = Fernet.generate_key()
+        f = Fernet(key)
+        encrypted_message = f.encrypt(message.encode()).decode()
+
+        return render_template('demoresp.html', message=encrypted_message)
+
+
 
 
 

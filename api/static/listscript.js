@@ -21,4 +21,8 @@ button4.addEventListener("click", () => {
     window.open("/requestoverload", "_blank")
 });
 
+button5.addEventListener("click", () => {
+    window.open("/demoresponse", "_blank")
+});
+
 });
