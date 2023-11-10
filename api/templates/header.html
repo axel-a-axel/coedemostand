@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-    <title>Page Title</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='headerstyle.css') }}">
-
+    <title>Header</title>
+    <link rel="stylesheet" type="text/css" href="../static/headerstyle.css">
+    <script src="../static/headerscript.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.png">
 </head>
-<body class="bclass">
-    <header class="header">
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo">
-        <h1 class="company-name">CoE Web Testing demo stand</h1>
+<body>
+<div class="header">
+  <a href="/homepage"><img src="static/logo.png" alt="Logo" width="70" height="70"></a>
+    <h1 class="coename"> Web Testing</h1>
+  <button id="headerbutton1">Workshop 1</button>
+  <button id="headerbutton2">Workshop 2</button>
+  <button id="headerbutton3">About Us</button>
+  <button id="headerbutton4">Contacts</button>
+</div>
 
-    </header>
+
 </body>
-</html>

@@ -99,7 +99,9 @@ def send_response():
         return render_template('demoresp.html', message=encrypted_message)'''
 
 
-
+@app.route("/landing")
+def landing():
+    return render_template("landing.html")
 
 
 

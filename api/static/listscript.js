@@ -22,7 +22,7 @@ button4.addEventListener("click", () => {
 });
 
 button5.addEventListener("click", () => {
-    window.open("/demoresponse", "_blank")
+    window.open("/landing", "_blank")
 });
 
 });
