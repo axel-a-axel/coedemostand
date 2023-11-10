@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, send_file, make_response
 import json
 from datetime import datetime
-from cryptography.fernet import Fernet
+
 
 
 app = Flask(__name__)
@@ -75,6 +75,11 @@ def requestsuccess():
 
 
 
+'''
+
+commented since vercel fails to add cryptography
+not actual in current implementation, yet will be used for future hw logic
+
 @app.route("/demoresponse", methods=["GET", "POST"])
 def send_response():
     if request.method == "GET":
@@ -91,7 +96,7 @@ def send_response():
         f = Fernet(key)
         encrypted_message = f.encrypt(message.encode()).decode()
 
-        return render_template('demoresp.html', message=encrypted_message)
+        return render_template('demoresp.html', message=encrypted_message)'''
 
 
 
