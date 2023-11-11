@@ -2,19 +2,19 @@ document.addEventListener("DOMContentLoaded", function() {
   // Get the button element by its id
 
 document.getElementById("headerbutton1").addEventListener("click", function() {
-  window.location.href = "/aboutus";
+  window.location.href = "/1";
 });
 
 document.getElementById("headerbutton2").addEventListener("click", function() {
-  window.location.href = "/aboutus";
+  window.location.href = "/2";
 });
 
 document.getElementById("headerbutton3").addEventListener("click", function() {
-  window.location.href = "/aboutus";
+  window.location.href = "/cookie";
 });
 
 document.getElementById("headerbutton4").addEventListener("click", function() {
-  window.location.href = "/aboutus";
+  window.location.href = "/requestoverload";
 });
 
 

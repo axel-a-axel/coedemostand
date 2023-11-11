@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Testing</title>
+    <title>Web Testing Demo Stand</title>
     <link rel="stylesheet" type="text/css" href="../static/landingstyle.css">
     <script src="../static/landingscript.js"></script>
 	<link rel="icon" type="image/x-icon" href="/static/favicon.png">
@@ -9,46 +9,48 @@
 <body>
 {% include "header.html" %}
        <main>
-        <video src="https://www.a1qa.com/wp-content/uploads/2021/02/bg-hero-video.mp4" autoplay loop muted preload="metadata"></video>
+
+   <div class="video-wrapper">
+        <video class="video-element" autoplay loop muted preload="metadata">
+                <source src="https://www.a1qa.com/wp-content/uploads/2021/02/bg-hero-video.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+  </video>
+</div>
+
         <h2>Welcome to the CoE Web Testing demo stand</h2>
-        <div class="grid-container">
-            <div class="grid-item">
-                <div class="cell-text">Cell 1</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 2</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 3</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 4</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 5</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 6</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 7</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 8</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-            <div class="grid-item">
-                <div class="cell-text">Cell 9</div>
-                <button class="purple-button">Click me pls</button>
-            </div>
-        </div>
+
+
+<div class="grid-container">
+  <div class="grid-item">
+    <img src="static/gridpic.jpg" alt="Logo" width="30" height="30" />
+    <h3>We Dem Testers</h3>
+    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
+  </div>
+  <div class="grid-item">
+    <img src="static/gridpic.jpg" alt="Logo" width="30" height="30" />
+    <h3>We Dem Testers</h3>
+    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
+  </div>
+  <div class="grid-item">
+    <img src="static/gridpic.jpg" alt="Logo" width="30" height="30" />
+    <h3>We Dem Testers</h3>
+    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
+  </div>
+  <div class="grid-item">
+    <img src="static/gridpic.jpg" alt="Logo" width="30" height="30" />
+    <h3>We Dem Testers</h3>
+    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
         <form>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" pattern="[A-Za-z]+" required>

@@ -10,7 +10,7 @@
 }
 .coename {
 
-  font-family: 'ALSSchlangesans-Bold', sans-serif;
+  font-family: Verdana, sans-serif;
   font-size: 22px;
 }
 
@@ -41,5 +41,5 @@
 
 @font-face {
   font-family: 'ALSSchlangesans-Bold';
-  src: url('/fonts/ALSSchlangesans-Bold.woff2') format('woff2');
+  src: url('fonts/ALSSchlangesans-Bold.woff2') format('woff2');
 }

@@ -1,15 +1,15 @@
-div {
+.container {
   text-align: center;
 }
 
-img {
+.image {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
 }
 
-button {
+.cookiebutton {
   display: block;
 
   margin-left: auto;

@@ -26,7 +26,7 @@ def get_image():
 
   return send_file(image_path, mimetype="image/jpeg")
 
-@app.route("/")
+@app.route("/list")
 def listpage():
     return render_template("list.html")
 
@@ -99,7 +99,7 @@ def send_response():
         return render_template('demoresp.html', message=encrypted_message)'''
 
 
-@app.route("/landing")
+@app.route("/")
 def landing():
     return render_template("landing.html")
 
