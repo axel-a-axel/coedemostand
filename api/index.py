@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, make_response
+from flask import Flask, render_template, request, send_file, make_response, jsonify
 import json
 from datetime import datetime
 
@@ -68,7 +68,23 @@ def donotrequest():
 
 @app.route("/requestsuccess", methods=["POST"])
 def requestsuccess():
-    return json.dumps({'success':"Good! TBD replaced with sth valid"}), 201, {'ContentType':'application/json'}
+    if request.is_json:
+        data = request.get_json()
+        if 'username' in data:
+            username = data['username']
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            response = jsonify({'message': f'{username} passed RequestOverload task at {timestamp}'})
+            response.status_code = 201
+            return response
+        else:
+            timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            response = jsonify({'message': f'Anonymous passed RequestOverload task at {timestamp}'})
+            response.status_code = 201
+            return response
+    else:
+        response = jsonify({'message': 'Check the cookies, m8'})
+        response.status_code = 400
+        return response
 
 
 
