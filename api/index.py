@@ -101,6 +101,11 @@ def send_response():
 
 @app.route("/")
 def landing():
+    cookie_value = request.cookies.get('username')
+    if cookie_value is None:
+        response = make_response(render_template('landing.html', showform=True))
+        return response
+
     return render_template("landing.html")
 
 

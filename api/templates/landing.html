@@ -45,22 +45,12 @@
 </div>
 
 
+{% if showform %}
+{% include "askname.html" %}
+{% else %}
+<br>
+{% endif %}
 
-
-
-
-
-
-<div class="form">
-      <form class="introducer" onsubmit="event.preventDefault(); document.cookie = 'username=' + nameField.value;">
-        <h5>Go away, there's nothing to see here</h5>
-        <div class="input-container">
-          <input type="text" id="username" name="username" placeholder="Name" required pattern="[A-Za-z ]{1,255}">
-          <input type="email" id="email" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-        </div>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
 
 
     </main>
