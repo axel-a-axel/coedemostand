@@ -34,3 +34,15 @@
     transition: box-shadow .2s ease;
     transition: box-shadow .2s ease,-webkit-box-shadow .2s ease
 }
+
+#cookieText {
+  font-family: 'Roboto', sans-serif; /* Option 1: ALS Schlange Sans */
+  /* font-family: 'Roboto', sans-serif; /* Option 2: Roboto */
+  /* font-family: 'Open Sans', sans-serif; /* Option 3: Open Sans */
+  font-size: 40px;
+  text-shadow: none; /* Remove default glow effect */
+}
+
+#cookieText:hover {
+  text-shadow: 0 0 10px orange; /* Add glow effect on hover */
+}

@@ -11,8 +11,10 @@
 {% include "header.html" %}
     <div class="container">
         <img src="static/biscuits.gif" alt="Image" class="image">
+        <h1 id="cookieText">Cookies with the wrong value will be eaten. A cookie with the correct value will help you  pass
+            the task.</h1>
         {% if button %}
-        <button class="cookiebutton" onclick="location.reload()">Try again</button>
+        <button class="cookiebutton" onclick="location.reload()">Check my cookies</button>
         {% else %}
         <p>Good one! Passed</p>
         {% endif %}
