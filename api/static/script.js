@@ -10,10 +10,37 @@ function closeModal() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("button").addEventListener("click", function() {
-        document.getElementById("button").innerHTML = "Well, you clicked me...";
-        setTimeout(function() {
-            document.getElementById("button").innerHTML = "Click me";
-        }, 3000);
+    document.getElementById("buttondisabled").addEventListener("click", function() {
+
+        document.getElementById("overlay").style.display = "block";
+
+        const usernameCookie = document.cookie.match(/username=([^;]+)/);
+        const username = usernameCookie ? usernameCookie[1] : 'Anonymous';
+        const timestamp = new Date().toLocaleString();
+
+        document.getElementById('passedTask').textContent = `${username} has passed Cookies task at ${timestamp}`;
     });
+var copied = false;
+document.getElementById("overlay").addEventListener("click", function() {
+    if (!copied) {
+        var text = document.getElementById("passedTask").innerText;
+        var tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        document.getElementById("passedTask").innerText = "Copied to clipboard";
+        copied = true;
+        setTimeout(function() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("passedTask").innerText = text;
+        }, 3000);
+    } else {
+        document.getElementById("overlay").style.display = "none";
+    }
 });
+});
+
+
+

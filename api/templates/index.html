@@ -8,7 +8,7 @@
 </head>
 <body onload="showModal()">
     {% include "header.html" %}
-	<button id="button" disabled>Click me</button>
+	<button id="buttondisabled" disabled>Click me</button>
 
 	<div id="modal">
 		<p>Modal window is a bit sorry for not letting you to find the button</p>
@@ -16,6 +16,10 @@
 		<button  onclick="closeModal()">Close</button>
 	</div>
 
+
+  <div id="overlay" style="display: none;">
+    <p id="passedTask" style="text-align: center;"></p>
+  </div>
 
 </body>
 </html>

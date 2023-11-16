@@ -1,0 +1,127 @@
+#elusiveButton {
+  position: fixed;
+
+
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: top 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+
+#elusiveButton:hover {
+  transform: translate(-50%, -50%);
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  display: none;
+}
+
+/* CSS */
+.button-75 {
+  align-items: center;
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d);
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: center;
+  letter-spacing: .4px;
+  line-height: 1;
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-75:active {
+  outline: 0;
+}
+
+.button-75:hover {
+  outline: 0;
+}
+
+.button-75 span {
+  transition: all 200ms;
+}
+
+.button-75:hover span {
+  transform: scale(.9);
+  opacity: .75;
+}
+
+@media screen and (max-width: 991px) {
+  .button-75 {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .button-75 span {
+    line-height: 50px;
+  }
+}
+
+
+
+
+/* Styles for the placeholder text */
+.placeholder-text {
+  position: fixed; /* Fixes the text position to the viewport */
+  top: 50%; /* Positions the text vertically in the center of the page */
+  left: 50%; /* Positions the text horizontally in the center of the page */
+  transform: translate(-50%, -50%); /* Fine-tunes the positioning to account for the text's dimensions */
+     height: 40px;
+      margin: auto;
+    width: 50%;
+    padding: 10px;
+  background-color: transparent; /* Removes the background color to allow the glow effect */
+  content: "Elusive Joe, a cowboy with an uncanny ability to vanish into thin air, became a legend in the Wild West. Despite his mischievous disappearances, no one ever attempted to capture him, making him a paradox in a world that craved attention."; /* Sets the text content */
+  text-align: center; /* Centers the text horizontally within the container */
+  font-family: Verdana, sans-serif; /* Specifies the font family */
+  font-size: 24px; /* Sets the font size */
+  z-index: -1; /* Places the text behind other page elements */
+  pointer-events: none; /* Prevents users from interacting with the text */
+  padding: 20px; /* Adds padding to indent the text from the borders */
+
+  /* Creates a linear gradient with the specified colors */
+  background-image: linear-gradient(to right, #ff00ff 0%, #6600ff 50%, #ff00ff 200%);
+
+  /* Clips the gradient to the text, ensuring it only applies to the text characters */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Sets the text color to transparent, allowing the gradient to be visible */
+  text-fill-color: transparent;
+
+  /* Defines an animation named 'glow' with the specified properties */
+  animation: glow 5s linear infinite; /* Sets the animation duration to 5 seconds */
+}
+
+/* Keyframes for the 'glow' animation */
+@keyframes glow {
+  to {
+    background-position: 200%; /* Moves the gradient background to create a wave effect */
+  }
+}
+
+
+

@@ -126,9 +126,9 @@ def landing():
 
 
 
-@app.route("/adblocker")
-def adblocker():
-    return render_template("adblocker.html")
+@app.route("/jsbuttonclicker")
+def jsbuttonclicker():
+    return render_template("jsbuttonclicker.html")
 
 if __name__ == "__main__":
     app.run()
