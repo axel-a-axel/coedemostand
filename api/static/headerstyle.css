@@ -21,7 +21,8 @@
 #headerbutton1,
 #headerbutton2,
 #headerbutton3,
-#headerbutton4 {
+#headerbutton4,
+#headerbutton5 {
   font-family: Verdana;
   font-size: 18px;
   height: 78.75px;
@@ -32,6 +33,7 @@
 }
 
 #headerbutton1:hover,
+#headerbutton5:hover,
 #headerbutton2:hover,
 #headerbutton3:hover,
 #headerbutton4:hover {
@@ -40,7 +42,53 @@
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
 }
 
-@font-face {
-  font-family: 'ALSSchlangesans-Bold';
-  src: url('fonts/ALSSchlangesans-Bold.woff2') format('woff2');
+
+
+/* dropdown styles */
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #3498DB;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 160px; /* Fixed width for all items */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+

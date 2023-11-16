@@ -2,15 +2,15 @@ document.addEventListener("DOMContentLoaded", function() {
   // Get the button element by its id
 
 document.getElementById("headerbutton1").addEventListener("click", function() {
-  window.location.href = "/1";
+  window.location.href = "/#";
 });
 
 document.getElementById("headerbutton2").addEventListener("click", function() {
-  window.location.href = "/2";
+  window.location.href = "/#";
 });
 
 document.getElementById("headerbutton3").addEventListener("click", function() {
-  window.location.href = "/cookie";
+  window.location.href = "/#";
 });
 
 document.getElementById("headerbutton4").addEventListener("click", function() {
@@ -47,6 +47,10 @@ window.addEventListener('focus', () => {
 });
 
 
+// Drop-down animations and etc below
 
 
+
+
+// this is final });, ensure it is not broken by new code
 });

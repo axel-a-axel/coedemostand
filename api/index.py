@@ -30,11 +30,11 @@ def get_image():
 def listpage():
     return render_template("list.html")
 
-@app.route("/1")
+@app.route("/elements")
 def index():
     return render_template("index.html")
 
-@app.route("/2")
+@app.route("/network")
 def network():
     return render_template("network.html")
 

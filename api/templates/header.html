@@ -7,12 +7,26 @@
 </head>
 <body>
 <div class="header">
-  <a href="/"><img src="static/ratlogo.png" alt="Logo" width="70" height="70"></a>
+
+  <a href="/"><img src="https://i.ibb.co/Fh18bCy/ratlogo.png" onerror="this.onerror=null; this.src='static/ratlogo.png'"
+     alt="Logo" width="70" height="70"></a>
     <h1 class="coename"> Web Testing</h1>
-  <button id="headerbutton1">Elements</button>
-  <button id="headerbutton2">Network</button>
-  <button id="headerbutton3">Cookies</button>
-  <button id="headerbutton4">Request overload</button>
+
+    <div class="dropdown-container">
+        <button onclick="toggleDropdown()" class="dropbtn" id="headerbutton5">Menu</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/elements">Elements</a>
+            <a href="/network">Network</a>
+            <a href="/cookie">Cookies</a>
+            <a href="/requestoverload">Request Overload</a>
+        </div>
+    </div>
+
+  <button id="headerbutton1">About us</button>
+  <button id="headerbutton2">Contacts</button>
+  <button id="headerbutton3">One more button</button>
+ <!-- <button id="headerbutton4">Request overload</button> -->
+
 </div>
 
 
