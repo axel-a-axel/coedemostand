@@ -1,11 +1,20 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 
 const urls = [
-  "/donotrequestthispagepls",
-  "qwerty/asdfg/zxcvb",
-  "thispagedefinitelyexists",
-  "anotheronerequeststhedust",
-  "cats/cats/cats/dogs/cats",
+"https://catfact.ninja/fact",
+"https://api.coindesk.com/v1/bpi/currentprice.json",
+"https://www.boredapi.com/api/activity",
+"https://api.agify.io?name=meelad",
+"https://api.genderize.io?name=luc",
+"https://api.nationalize.io?name=nathaniel",
+"https://datausa.io/api/data?drilldowns=Nation&measures=Population",
+"https://dog.ceo/api/breeds/image/random",
+"https://api.ipify.org?format=json",
+"https://official-joke-api.appspot.com/random_joke",
+"http://universities.hipolabs.com/search?country=United+States",
+"https://api.zippopotam.us/us/33162",
+"https://jsonplaceholder.typicode.com/todos/1",
+"https://random-data-api.com/api/v2/users?size=2&is_xml=true"
 ];
 
 let intervalId = null;

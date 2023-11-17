@@ -15,7 +15,10 @@
   text-shadow: 0 0 10px #f4c8fa;
 
 }
+* {
 
+ font-family: Verdana;
+}
 
 
 #headerbutton1,

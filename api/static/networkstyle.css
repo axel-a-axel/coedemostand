@@ -17,14 +17,24 @@
 }
 
 /* Style the input and button elements */
-input, button {
+#data-input,
+#submit-button {
   font-size: 20px;
   padding: 10px;
 }
 
 /* Add some margin to the button */
-button {
+#submit-button {
   margin-left: 10px;
+}
+/* temp solution to make disabled button look like enabled, yet animation does not work */
+#submit-button:disabled {
+  font-size: 20px;
+  padding: 10px;
+  font-color:black;
+  cursor: pointer;
+    color: inherit;
+  opacity: 1;
 }
 
 /* Style the error message with red bold text */

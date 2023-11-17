@@ -46,7 +46,7 @@ var form = document.getElementById("form");
 var dataInput = document.getElementById("data-input");
 var submitButton = document.getElementById("submit-button");
 
-// Define a function to send data to the Flask backend
+// Define a function to send data to the backend
 function sendData(event) {
   // Prevent the default behavior of the form submission
   event.preventDefault();
@@ -54,10 +54,10 @@ function sendData(event) {
   // Get the value of the input element
   var data = dataInput.value;
 
-  // Use your Flask backend URL here
+  // Use your  backend URL here
   var url = "/submit";
 
-  // Use the fetch API to send a POST request to the Flask backend
+  // Use the fetch API to send a POST request to the  backend
   // Set the method, headers and body options
   var options = {
   method: "POST",
