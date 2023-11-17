@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const username = usernameCookie ? usernameCookie[1] : 'Anonymous';
         const timestamp = new Date().toLocaleString();
 
-        document.getElementById('passedTask').textContent = `${username} has passed Cookies task at ${timestamp}`;
+        document.getElementById('passedTask').textContent = `${username} has passed Elements task at ${timestamp}`;
     });
 var copied = false;
 document.getElementById("overlay").addEventListener("click", function() {

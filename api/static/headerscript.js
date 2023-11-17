@@ -13,9 +13,7 @@ document.getElementById("headerbutton3").addEventListener("click", function() {
   window.location.href = "/#";
 });
 
-document.getElementById("headerbutton4").addEventListener("click", function() {
-  window.location.href = "/requestoverload";
-});
+
 
 
 // Get the current tab title
