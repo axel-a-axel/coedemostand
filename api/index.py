@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, make_response, jsonify
+from flask import Flask, render_template, request, send_file, make_response, jsonify, render_template_string
 import json
 from datetime import datetime
 
@@ -10,6 +10,13 @@ app = Flask(__name__)
 @app.errorhandler(404)
 def page_not_found(*args):
   return "Well, you got one more issue to deal with", 404
+
+
+@app.before_request
+def before_request():
+    user_agent = request.headers.get('User-Agent')
+    if 'Mobile' in user_agent or 'Android' in user_agent or 'iPhone' in user_agent:
+        return render_template_string("<h1>No mobile devices allowed</h1>")
 
 
 @app.route("/submit", methods=["POST"])
@@ -86,33 +93,6 @@ def requestsuccess():
         response.status_code = 400
         return response
 
-
-
-
-
-
-'''
-
-commented since vercel fails to add cryptography
-not actual in current implementation, yet will be used for future hw logic
-
-@app.route("/demoresponse", methods=["GET", "POST"])
-def send_response():
-    if request.method == "GET":
-        return render_template("demoresp.html", message='')
-    elif request.method == "POST":
-        name = request.form['name']
-    
-        # Add timestamp to the received string
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        message = f'{name} ({timestamp})'
-
-        # Encrypt the message using cryptography library
-        key = Fernet.generate_key()
-        f = Fernet(key)
-        encrypted_message = f.encrypt(message.encode()).decode()
-
-        return render_template('demoresp.html', message=encrypted_message)'''
 
 
 @app.route("/")

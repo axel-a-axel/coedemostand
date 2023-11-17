@@ -36,13 +36,15 @@
 }
 
 #cookieText {
-  font-family: 'Roboto', sans-serif; /* Option 1: ALS Schlange Sans */
-  /* font-family: 'Roboto', sans-serif; /* Option 2: Roboto */
-  /* font-family: 'Open Sans', sans-serif; /* Option 3: Open Sans */
+  font-family: 'Verdana', sans-serif;
   font-size: 40px;
   text-shadow: none; /* Remove default glow effect */
 }
 
 #cookieText:hover {
   text-shadow: 0 0 10px orange; /* Add glow effect on hover */
+}
+
+#tasktip:hover {
+  text-shadow: 0 0 10px green; /* Add glow effect on hover */
 }

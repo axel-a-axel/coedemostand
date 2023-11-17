@@ -12,7 +12,12 @@
     <div class="container">
 <img src="https://i.ibb.co/DRgMXvk/biscuits.gif" onerror="this.onerror=null; this.src='static/biscuits.gif'"
      alt="Image">
-        <h1 id="cookieText">Cookies with the wrong value will be eaten. A cookie with the correct value will help you  pass
+        <h1 id="cookieText">Cookies with the <span id="tasktip">incorrect value</span> will be eaten. A cookie with the
+            <span id="tasktip">
+            correct
+            value</span> will
+                                                           help
+            you  pass
             the task.</h1>
         {% if button %}
         <button class="cookiebutton" onclick="location.reload()">Check my cookies</button>
