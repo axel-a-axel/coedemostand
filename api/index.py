@@ -63,14 +63,8 @@ def cookie():
     else:
         return render_template('cookiebad.html', button=True)
 
-@app.route("/cats/cats/cats/dogs/cats")
-def catscats():
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
 
 
-@app.route("/donotrequestthispagepls")
-def donotrequest():
-    return json.dumps({'failure':"I asked not to request this!"}), 418, {'ContentType':'application/json'}
 
 
 @app.route("/requestsuccess", methods=["POST"])
@@ -109,6 +103,11 @@ def landing():
 @app.route("/jsbuttonclicker")
 def jsbuttonclicker():
     return render_template("jsbuttonclicker.html")
+
+
+@app.route("/htmlbreakpoints")
+def htmlbreakpoints():
+    return render_template("htmlbreakpoints.html")
 
 if __name__ == "__main__":
     app.run()

@@ -1,31 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web Testing Demo Stand</title>
-    <link rel="stylesheet" type="text/css" href="../static/landingstyle.css">
-    <script src="../static/landingscript.js"></script>
+    <title>DOM Breakpoints</title>
+    <link rel="stylesheet" type="text/css" href="../static/htmlbreakstyle.css">
+    <script src="../static/htmlbreakscript.js"></script>
 	<link rel="icon" type="image/x-icon" href="/static/favicon.png">
     <meta name="description"
           content="Meet Web Testing Demo Stand, a software QA Training Center with over 1,500 awesome experts. Reach out to discuss software testing training services you need.">
 </head>
 <body>
 {% include "header.html" %}
-       <main>
-{% if showform %}
-{% include "askname.html" %}
-{% else %}
-<br>
-{% endif %}
-   <div class="video-wrapper">
-        <video class="video-element" autoplay loop muted preload="metadata">
-                <source src="https://www.a1qa.com/wp-content/uploads/2021/02/bg-hero-video.mp4" type="video/mp4">
-
-                Your browser does not support the video tag.
-  </video>
-</div>
-
-        <h2>Welcome to the CoE Web Testing demo stand</h2>
-
 
 <div class="grid-container">
   <div class="grid-item">
@@ -58,10 +42,5 @@
 </div>
 
 
-
-
-
-
-    </main>
 </body>
 </html>

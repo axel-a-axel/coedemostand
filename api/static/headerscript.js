@@ -48,11 +48,7 @@ window.addEventListener('focus', () => {
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.body.innerHTML = "<h1>No mobile devices allowed</h1>";
 }
-window.onresize = function() {
-    if(window.innerWidth <= 800 || window.innerHeight <= 600) {
-        document.body.innerHTML = "<h1>No mobile devices allowed</h1>";
-    }
-}
+
 
 
 
