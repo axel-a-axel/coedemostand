@@ -1,4 +1,4 @@
-/*
+
 
 function getRandomAction() {
     return Math.random() < 0.5 ? 'Add' : 'Delete';
@@ -74,5 +74,3 @@ function refreshGrid() {
 
 // Initial load of the grid
 refreshGrid();
-
-*/
