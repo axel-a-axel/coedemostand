@@ -104,10 +104,11 @@ def landing():
 def jsbuttonclicker():
     return render_template("jsbuttonclicker.html")
 
-
+'''
 @app.route("/htmlbreakpoints")
 def htmlbreakpoints():
     return render_template("htmlbreakpoints.html")
 
 if __name__ == "__main__":
     app.run()
+'''
