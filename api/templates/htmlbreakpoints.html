@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>DOM Breakpoints</title>
+    <title>Breakpoints</title>
     <link rel="stylesheet" type="text/css" href="../static/htmlbreakstyle.css">
     <script src="../static/htmlbreakscript.js"></script>
+
 	<link rel="icon" type="image/x-icon" href="/static/favicon.png">
     <meta name="description"
           content="Meet Web Testing Demo Stand, a software QA Training Center with over 1,500 awesome experts. Reach out to discuss software testing training services you need.">
@@ -11,35 +12,26 @@
 <body>
 {% include "header.html" %}
 
-<div class="grid-container">
-  <div class="grid-item">
+    <div id="grid-container" class="grid-container">
+        <!-- Cells will be dynamically added here -->
+    </div>
+    <button id="moreButton" class="more-button" onclick="refreshGrid()">
+        <span id="buttonText">More</span>
+        <span id="loadingIndicator" class="spinner"></span>
+    </button>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-      <img src="https://i.ibb.co/RyMpGSq/gridpic.jpg" onerror="this.onerror=null; this.src='static/gridpic.jpg'"
-     alt="Logo" width="30" height="30" />
+<div class="separator"></div>
+    <div id="second-grid-container" class="grid-container">
+        <!-- Second Grid -->
+        <!-- Cells will be dynamically added here -->
+    </div>
 
-
-    <h3>We Dem Testers</h3>
-    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
-  </div>
-  <div class="grid-item">
-    <img src="https://i.ibb.co/RyMpGSq/gridpic.jpg" onerror="this.onerror=null; this.src='static/gridpic.jpg'"
-     alt="Logo" width="30" height="30" />
-    <h3>We Dem Testers</h3>
-    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
-  </div>
-  <div class="grid-item">
-    <img src="https://i.ibb.co/RyMpGSq/gridpic.jpg" onerror="this.onerror=null; this.src='static/gridpic.jpg'"
-     alt="Logo" width="30" height="30" />
-    <h3>We Dem Testers</h3>
-    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
-  </div>
-  <div class="grid-item">
-    <img src="https://i.ibb.co/RyMpGSq/gridpic.jpg" onerror="this.onerror=null; this.src='static/gridpic.jpg'"
-     alt="Logo" width="30" height="30" />
-    <h3>We Dem Testers</h3>
-    <p>Trusted by 800+ clients from 39 countries. Our global presence enables us to deliver software testing services 24/7/365 and swiftly adapt to any time zone and customer’s requirements.</p>
-  </div>
-</div>
+<button id="changesButton" class="more-button" onclick="executeChanges()">
+        <span id="buttonTextChanges">Changes!</span>
+        <span id="loadingIndicatorChanges" class="spinner"></span>
+    </button>
+    <script src="../static/htmlbreakscript2.js"></script>
 
 
 </body>
