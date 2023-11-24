@@ -1,4 +1,7 @@
 // Function to create cells for the second grid
+
+/*
+
 function createCells() {
     const secondGridContainer = document.getElementById('second-grid-container');
 
@@ -79,3 +82,5 @@ function getRandomAction2() {
 
 // Initial creation of cells for the second grid when the page is opened
 createCells();
+
+*/
