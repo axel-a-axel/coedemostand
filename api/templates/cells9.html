@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/cells9style.css">
+    <script src="../static/cells9script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.png">
+    <title>cells9</title>
+</head>
+<body>
+{% include "header.html" %}
+    <div class="grid">
+        <!-- Top Left Cell with Image -->
+        <div class="cell" id="top-left">
+            <img src="https://www.a1qa.com/wp-content/uploads/2020/11/img-cooperating.svg" alt="Image" id="image">
+        </div>
+
+        <!-- Top Center Cell with Joke Button -->
+        <div class="cell" id="top-center">
+            <button id="jokeButton">Get Joke</button>
+        </div>
+
+        <!-- Top Right Cell -->
+        <div class="cell" id="top-right"></div>
+
+        <!-- Middle Left Cell -->
+        <div class="cell" id="middle-left"></div>
+
+        <!-- Middle Center Cell -->
+        <div class="cell" id="middle-center">
+            <div id="thinkingText">
+                <div class="line" id="line1">Press it, user, one more time</div>
+                <div class="line" id="line2"></div>
+            </div>
+        </div>
+
+        <!-- Middle Right Cell -->
+        <div class="cell" id="middle-right"></div>
+
+        <!-- Bottom Left Cell -->
+        <div class="cell" id="bottom-left"></div>
+
+        <!-- Bottom Center Cell -->
+        <div class="cell" id="bottom-center"></div>
+
+        <!-- Bottom Right Cell -->
+        <div class="cell" id="bottom-right"></div>
+    </div>
+</body>
+</html>

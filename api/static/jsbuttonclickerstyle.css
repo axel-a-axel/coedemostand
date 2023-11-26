@@ -34,7 +34,8 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  font-family: "Codec cold",sans-serif;
+  /* font-family: "Codec cold",sans-serif; */
+  font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
   font-size: 16px;
   font-weight: 700;
   height: 54px;
@@ -96,7 +97,8 @@
   background-color: transparent; /* Removes the background color to allow the glow effect */
   content: "Elusive Joe, a cowboy with an uncanny ability to vanish into thin air, became a legend in the Wild West. Despite his mischievous disappearances, no one ever attempted to capture him, making him a paradox in a world that craved attention."; /* Sets the text content */
   text-align: center; /* Centers the text horizontally within the container */
-  font-family: Verdana, sans-serif; /* Specifies the font family */
+  /* font-family: Verdana, sans-serif; /* Specifies the font family */
+  font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
   font-size: 24px; /* Sets the font size */
   z-index: -1; /* Places the text behind other page elements */
   pointer-events: none; /* Prevents users from interacting with the text */

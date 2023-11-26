@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request, send_file, make_response, jsonify, render_template_string
+from flask import Flask, render_template, request, send_file, make_response, jsonify, render_template_string, send_from_directory
 import json
 from datetime import datetime
 
 
 
 app = Flask(__name__)
+
+
+@app.route('/fonts/alsb.woff2')
+def serve_font():
+    return send_from_directory('fonts', 'alsb.woff2')
 
 
 @app.errorhandler(404)
@@ -108,6 +113,11 @@ def jsbuttonclicker():
 @app.route("/htmlbreakpoints")
 def htmlbreakpoints():
     return render_template("htmlbreakpoints.html")
+
+
+@app.route("/cells9")
+def cells9():
+    return render_template("cells9.html")
 
 if __name__ == "__main__":
     app.run()

@@ -15,11 +15,11 @@
   height: 100%;
 }
 
-* {
+/* {
  font-size: 100%;
  font-family: Verdana;
 }
-
+*/
 
 h2 {
     position: absolute;
@@ -30,7 +30,8 @@ h2 {
     color: white;
     text-shadow: 2px 2px 4px #000000;
     text-align: center;
-    font-family: Verdana;
+    /*font-family: Verdana; */
+    font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
 
 }
 

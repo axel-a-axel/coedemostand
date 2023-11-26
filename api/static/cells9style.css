@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'COE Demo Stand Personal Unique Awesome Font 228';
+    src: url('../fonts/alsb.woff2') format('woff2');
+    font-display: swap;
+}
+
+body {
+    font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
+    text-align: center;
+/* fonts, do not change */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd; /* Light-grey borders */
+    transition: box-shadow 0.3s ease-in-out; /* Added box-shadow transition */
+    overflow: hidden;
+    position: relative; /* Added for absolute positioning */
+}
+
+.thinkingText {
+    position: absolute; /* Absolute positioning for proper overlap */
+}
+
+.line {
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+#top-left {
+    background-color: #eee;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#top-left:hover #image {
+    transform: scale(1.05); /* Scale the image on hover */
+}
+
+#top-left:hover #image:hover {
+    transform: scale(1); /* Return to normal scale on mouse leave */
+}
+
+#top-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#jokeButton {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#jokeButton.drag-over {
+    background-color: #d9a3ff; /* Light purple on drag-over */
+}
+
+.cell:hover {
+    box-shadow: 0 0 10px #d9a3ff inset, 0 0 10px #d9a3ff; /* Inner glow on hover and outer glow for all borders */
+}
+
+.cell:not(:hover) {
+    background-color: white;
+}
+
+/* Add styles for other cells as needed */

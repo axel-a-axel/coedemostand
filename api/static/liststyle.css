@@ -17,7 +17,8 @@
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
-  font-family: Phantomsans, sans-serif;
+  /* font-family: Phantomsans, sans-serif;*/
+  font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
   font-size: 20px;
   justify-content: center;
   line-height: 1em;

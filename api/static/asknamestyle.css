@@ -27,7 +27,8 @@
 
 .introtext {
   margin-bottom: 20px;
-  font-family: Verdana;
+  /* font-family: Verdana; */
+  font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
 }
 
 #nameInput {
@@ -55,7 +56,8 @@
 
   /* Initial glow color on hover */
   transition: box-shadow 0.3s ease;
-  font-family: Verdana, sans-serif;
+  /* font-family: Verdana, sans-serif; */
+  font-family: 'COE Demo Stand Personal Unique Awesome Font 228', sans-serif;
   padding: 10px 20px; /* Add some distance between text and borders */
   background-color: white; /* Set the background color to white */
 }
