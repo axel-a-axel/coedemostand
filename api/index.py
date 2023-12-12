@@ -130,5 +130,22 @@ def htmlbreakpoints():
 def cells9():
     return render_template("cells9.html")
 
+
+@app.route('/get_content', methods=['GET'])
+def get_content():
+    try:
+        # Path to the directory containing the JSON file
+        json_directory = 'content'
+        # Name of the JSON file
+        json_filename = 'landing_content.json'
+
+        # Use send_from_directory to send the JSON file
+        return send_from_directory(json_directory, json_filename, as_attachment=False)
+
+    except Exception as e:
+
+        return jsonify(success=False, content=None)
+
+
 if __name__ == "__main__":
     app.run()
