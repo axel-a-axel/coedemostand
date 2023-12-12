@@ -9,30 +9,25 @@
 </head>
 <body>
 {% include "header.html" %}
-  <div class="container">
-    <!-- First section -->
-    <div class="section" id="section1">
-      <div class="section-content">
-        <!-- An empty image element to display the image from the Flask backend -->
-        <img id="image" src="" alt="Image" width="300" height="300">
-        <!-- A paragraph element to display an error message if the image is not found or any other error occurs -->
-        <p id="error"></p>
-      </div>
-    </div>
-    <!-- Second section -->
-    <div class="section" id="section2">
-      <div class="section-content">
-        <!-- A form element to send data to the Flask backend -->
-        <form id="form">
-          <!-- An input element to enter some data -->
-          <input id="data-input" type="text" placeholder="Enter some data" >
-          <!-- A button element to submit the form -->
-          <button id="submit-button" class="fake-disabled" disabled>Submit</button>
+<div id="submit-form-container">
+        <form id="form-container" onsubmit="submitForm(event)">
+            <div class="form-header">
+                <img src="https:\\google.com\pictures\dogs\dog211.png" alt="Picture"
+                     onerror="handleImageError()">
+            </div>
+            <div class="form-text">
+                <p>I beseech thee to cast thine eyes upon yon parchment, wherein a tapestry of mystery unfolds. Describe, in but a few words, the visage captured within, revealing the essence of its tale. Behold, for hidden amidst the strokes of ink, a feline companion prowls, a creature of stealth and grace. Attend to this humble request, and unravel the secrets enshrouded within the artistry.</p>
+            </div>
+            <div class="form-task-description">
+                <p>Examine the picture and write what you see in it. Your answer will be considered and the modal window (without buttons, of course) will show you some text.</p>
+            </div>
+            <div class="form-input">
+                <input type="text" id="text-input" maxlength="255" placeholder="Describe the picture">
+            </div>
+            <div class="form-submit">
+                <button id="submit-button" disabled onclick="submitForm()">Submit</button>
+            </div>
         </form>
-      </div>
     </div>
-  </div>
-  <!-- Link to the script.js file -->
-
 </body>
 </html>

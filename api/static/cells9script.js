@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     jokeButton.addEventListener("click", function() {
         jokeButton.innerHTML = "???";
         setTimeout(function() {
-            jokeButton.innerHTML = "Get Joke";
+            jokeButton.innerHTML = "Get a joke";
         }, 2000);
     });
 
@@ -112,6 +112,35 @@ document.addEventListener("DOMContentLoaded", function() {
         resetThinkingText();
     });
 });
+
+/// func to show modal on r click
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Your existing script
+
+    // Prevent context menu and show modal on right-click
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        showNoContextMenuModal();
+    });
+
+    function showNoContextMenuModal() {
+        // Create modal element
+        const modal = document.createElement('div');
+        modal.classList.add('modal-context');
+        modal.textContent = 'No context allowed!';
+
+        // Append modal to the body
+        document.body.appendChild(modal);
+
+        // Set a timeout to remove the modal after 1 second
+        setTimeout(function() {
+            document.body.removeChild(modal);
+        }, 1000);
+    }
+});
+
+
 
 
 

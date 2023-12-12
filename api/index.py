@@ -25,10 +25,21 @@ def before_request():
 
 
 @app.route("/submit", methods=["POST"])
-def post():
-  data = request.get_data(as_text=True)
-  data = f"Its so nice from your side to send me {data}"
-  return data #json.dumps({"message": data})
+def submit_data():
+    description = request.data.decode("utf-8")
+
+    str_to_compare = '"some random characters instead of picture description"'
+
+    if description == str_to_compare:
+
+        return jsonify({"message": "It's so nice from your side to send me " + description}), 200
+
+    username = request.cookies.get("username")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    message = f"Anonymous passed part of the Network task at {timestamp}" if username is None else username + (f" "
+                                                                                                               f"passed part of the Network task at {timestamp}")
+    return jsonify({"message": message})
+
 
 
 @app.route("/getimage", methods=["GET"])

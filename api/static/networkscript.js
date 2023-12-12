@@ -1,155 +1,93 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the button element by its id
+function submitForm(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
 
-// Get the image and error elements by their ids
-var image = document.getElementById("image");
-var error = document.getElementById("error");
+    var textField = document.getElementById('text-input');
+    var inputValue = textField.value.trim();
 
-function fetchImage() {
-  // Imma kinda lazy developer, so I will leave the correct part of the URL in the comment
-  // and the correct URL part is "/getimage"
-  // hope someone will fix it later
-  var url = "/some_random_url";
+    // Check if the input value is not empty
+    if (inputValue !== '') {
+        // Perform actual POST request with the data
+        sendPostRequest(inputValue);
+    } else {
+        // Highlight the text input if it's empty
+        highlightRedGlow(textField);
+    }
+}
 
-  // Use the fetch API to get the response
-  fetch(url)
-    .then(response => {
-      // Check if the response is ok (status code 200)
-      if (response.ok) {
-        // Return the response as Blob object
-        return response.blob();
-      } else {
-        // Throw an error with the status text
-        //throw new Error(response.statusText);
-        error.textContent = "Seems that something gone wrong and someone (not me) has to deal with it";
-      }
+
+
+
+
+function highlightRedGlow(element) {
+    // Add red glow effect to the element for a short duration
+    element.classList.add('red-glow');
+    setTimeout(function () {
+        element.classList.remove('red-glow');
+    }, 1000); // Adjust the duration as needed
+}
+
+function sendPostRequest(data) {
+    // URL for the server endpoint (replace with your actual server endpoint)
+    var url = '/submit';
+// Retrieve the "username" cookie value
+    var usernameCookie = getCookie('username');
+
+    // Include the "username" cookie in the request headers
+    var headers = {
+        'Content-Type': 'application/json',
+    };
+
+    if (usernameCookie) {
+        headers['Cookie'] = 'username=' + encodeURIComponent(usernameCookie);
+    }
+    // Actual POST request using Fetch API
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        // correct:
+        // body: JSON.stringify(data),
+        body: JSON.stringify("some random characters instead of picture description"),
     })
-    .then(blob => {
-      // Create a local URL for the blob object
-      var imageUrl = URL.createObjectURL(blob);
-      // Set the src attribute of the image element to the imageUrl
-      image.src = imageUrl;
+    .then(response => response.json())
+    .then(data => {
+        // Handle the server response by showing a modal
+        showModal(data);
     })
     .catch(error => {
-      // Handle any errors
-      console.error(error);
-      // Set the text content of the error element to a message
-      error.textContent = "Seems that something gone wrong and someone (not me) has to deal with it";
+        console.error('Error sending POST request:', error);
+        // Handle the error as needed
     });
 }
 
-// Call the fetchImage function when the page loads completely
-window.addEventListener("load", fetchImage);
+function showModal(responseText) {
+    // Create a modal element
+    var modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = '<p>' + responseText.message + '</p>';
 
-// Get the form, input and button elements by their ids
-var form = document.getElementById("form");
-var dataInput = document.getElementById("data-input");
-var submitButton = document.getElementById("submit-button");
+    // Close the modal on click anywhere outside the modal
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
 
-// Define a function to send data to the backend
-function sendData(event) {
-  // Prevent the default behavior of the form submission
-  event.preventDefault();
-
-  // Get the value of the input element
-  var data = dataInput.value;
-
-  // Use your  backend URL here
-  var url = "/submit";
-
-  // Use the fetch API to send a POST request to the  backend
-  // Set the method, headers and body options
-  var options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  //correct: body: JSON.stringify(data)
-  body: JSON.stringify('some random set of characters instead of anything meaningful')
-};
-
-// Use the fetch API to get the response
-fetch(url, options)
-  .then(response => {
-    // Check if the response is ok (status code 200)
-    if (response.ok) {
-      // Return the response as string
-      return response.text();
-    } else {
-      // Throw an error with the status text
-      throw new Error(response.statusText);
-    }
-  })
-  .then(data => {
-    // Handle the data
-    console.log(data);
-
-    // Display a modal window with the data as text
-
-    // Create a div element for the modal background
-    var modalBg = document.createElement("div");
-    // Set some attributes and styles for the modal background
-    modalBg.id = "modal-bg";
-    modalBg.style.position = "fixed";
-    modalBg.style.top = "0";
-    modalBg.style.left = "0";
-    modalBg.style.width = "100%";
-    modalBg.style.height = "100%";
-    modalBg.style.backgroundColor = "rgba(0,0,0,0.5)";
-
-    // Create a div element for the modal content
-    var modalContent = document.createElement("div");
-    // Set some attributes and styles for the modal content
-    modalContent.id = "modal-content";
-    modalContent.style.position = "absolute";
-    modalContent.style.top = "50%";
-    modalContent.style.left = "50%";
-    modalContent.style.transform = "translate(-50%, -50%)";
-    modalContent.style.backgroundColor = "#fff";
-    modalContent.style.padding = "20px";
-
-    // Create a p element for the text
-    var text = document.createElement("p");
-    // Set some attributes and styles for the text
-    text.id = "text";
-    text.textContent = data;
-
-    // Append the text to the modal content
-    modalContent.appendChild(text);
-
-    // Append the modal content to the modal background
-    modalBg.appendChild(modalContent);
-
-    // Append the modal background to the body element
-    document.body.appendChild(modalBg);
-
-  })
-  .catch(error => {
-    // Handle any errors
-    console.error(error);
-  });
-
-// Clear the input value
-dataInput.value = "";
+    // Append the modal to the body
+    document.body.appendChild(modal);
 }
 
-// Add a submit event listener to the form element
-form.addEventListener("submit", sendData);
+function handleImageError() {
+    var imageContainer = document.querySelector('.form-header');
+    imageContainer.innerHTML = '<img src="/static/pic.png"><p style="color: red;">Seems that something gone wrong while  trying to load an image</p>';
+    // Correct function below
+    //imageContainer.innerHTML = '<img src="/static/my_awesome_cat.jpg" height="300" width="300">'
+}
 
-// Add a click event listener to anywhere on the page to close the modal window if it exists
-
-window.addEventListener("click", function(event) {
-  // Get the modal background element by its id if it exists
-  var modalBg = document.getElementById("modal-bg");
-  // Check if the modal background element exists
-  if (modalBg) {
-    // Check if the user clicks on the modal background element
-    if (event.target == modalBg) {
-      // Remove the modal background element from the body element
-      document.body.removeChild(modalBg);
-    }
-  }
-});
-
-
-});
+// Function to retrieve the value of a specific cookie
+function getCookie(name) {
+    var cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return cookieValue ? decodeURIComponent(cookieValue[2]) : null;
+}
