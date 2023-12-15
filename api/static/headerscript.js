@@ -13,10 +13,12 @@ document.getElementById("headerbutton3").addEventListener("click", function() {
   window.location.href = "/#";
 });
 
+const pathname = window.location.pathname;
+if (pathname === '/') {
+  // Do nothing on the landing page
 
-
-
-// Get the current tab title
+} else {
+  // Get the current tab title
 const originalTitle = document.title;
 
 // Get the list of tab titles
@@ -43,6 +45,10 @@ setInterval(() => {
 window.addEventListener('focus', () => {
   document.title = originalTitle;
 });
+}
+
+
+
 
 
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
