@@ -49,7 +49,7 @@ function sendPostRequest(data) {
         },
         // correct:
         // body: JSON.stringify(data),
-        body: JSON.stringify("some random characters instead of picture description"),
+        body: JSON.stringify(document.getElementById('text-input').getAttribute('placeholder')),
     })
     .then(response => response.json())
     .then(data => {

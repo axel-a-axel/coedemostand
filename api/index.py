@@ -28,7 +28,7 @@ def before_request():
 def submit_data():
     description = request.data.decode("utf-8")
 
-    str_to_compare = '"some random characters instead of picture description"'
+    str_to_compare = '"Some picture description"'
 
     if description == str_to_compare:
 
