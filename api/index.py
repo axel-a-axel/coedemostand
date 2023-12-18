@@ -147,5 +147,10 @@ def get_content():
         return jsonify(success=False, content=None)
 
 
+@app.route("/registerpage")
+def registerpage():
+    return render_template("register.html")
+
+
 if __name__ == "__main__":
     app.run()

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create new account</title>
+    <link rel="stylesheet" type="text/css" href="../static/registerstyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../static/registerscript.js"></script>
+
+	<link rel="icon" type="image/x-icon" href="/static/favicon.png">
+
+</head>
+<body>
+{% include "header.html" %}
+    <div class="signup-form-container">
+        <h1 class="form-title">Register now!</h1>
+        <form id="signup-form">
+            <div id="inputs-container">
+            <div class="form-group">
+
+                <input type="text" id="first-name" class="form-field" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+
+                <input type="text" id="last-name" class="form-field" placeholder="Your last name" required>
+            </div>
+            <div class="form-group">
+
+                <input type="text" id="second-name" class="form-field" placeholder="Your second name" required>
+            </div>
+            <div class="form-group">
+<div class="form-group">
+
+        <input type="email" id="email" class="form-field" placeholder="Your email" required>
+    </div>
+
+                <input type="text" id="fav-colour" class="form-field" placeholder="Your favourite colour" required>
+            </div>
+            <div class="form-group">
+
+                <input type="text" id="cat-name" class="form-field" placeholder="Your cat name" required>
+            </div>
+            <div class="form-group">
+
+                <input type="text" id="fav-sauce" class="form-field" placeholder="Your favourite sauce for fries" required>
+            </div>
+                </div>
+            <div class="checkboxes-group" id="checkboxes-group">
+                <label>
+                    <input type="checkbox" class="form-checkbox" required>
+                    I confirm that I am a human being
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" class="form-checkbox" required>
+                    I am definitely not a robot
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" class="form-checkbox">
+                    or maybe I am, but I don't want to admit it.
+                </label>
+                <br>
+                <label>
+                    <input type="checkbox" class="form-checkbox">
+                    I like to tick the checkboxes
+                </label>
+            </div>
+            <hr>
+            <div class="radiobuttons-group">
+                <label>
+                    <input type="radio" name="day" class="form-radio" required>
+                    Good day
+                </label>
+                <label>
+                    <input type="radio" name="day" class="form-radio" required>
+                    Bad day
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="browser" class="form-radio" required>
+                    Chrome
+                </label>
+                <label>
+                    <input type="radio" name="browser" class="form-radio" required>
+                    Firefox
+                </label>
+                <br>
+                <label>
+                    <input type="radio" name="language" class="form-radio" required>
+                    Python
+                </label>
+                <label>
+                    <input type="radio" name="language" class="form-radio" required>
+                    Fortran
+                </label>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="submit-button">Submit</button>
+                <button type="button" class="cancel-button">Cancel</button>
+            </div>
+        </form>
+    </div>
+>
+</body>
+</html>
+
