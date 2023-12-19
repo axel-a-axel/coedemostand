@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Check if the field and checkbox exist
         const fieldExists = document.getElementById(randomFieldName);
-        const checkboxExists = document.getElementById(randomCheckboxName);
+        const checkboxExists = document.querySelector(`input[type="checkbox"][value="${randomCheckboxName}"]`);
 
         // If they exist, remove them along with labels and line breaks
         if (fieldExists) {
