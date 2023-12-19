@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Create new input field
             const newField = document.createElement('input');
             newField.type = 'text';
+            newField.id = randomFieldName;
             newField.placeholder = randomFieldName;
             newField.className = 'form-field';
             newField.required = true;
