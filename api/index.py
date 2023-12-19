@@ -7,6 +7,16 @@ from datetime import datetime
 app = Flask(__name__)
 
 
+def cache_control_middleware(app):
+    @app.after_request
+    def add_cache_control(response):
+        if response.status_code == 200 and response.mimetype in ['text/css', 'application/javascript']:
+            response.headers['Cache-Control'] = 'no-cache, must-revalidate'
+        return response
+
+    return app
+
+
 @app.route('/fonts/alsb.woff2')
 def serve_font():
     return send_from_directory('fonts', 'alsb.woff2')
@@ -152,5 +162,6 @@ def registerpage():
     return render_template("register.html")
 
 
-if __name__ == "__main__":
+app = cache_control_middleware(app)
+if __name__ == '__main__':
     app.run()
