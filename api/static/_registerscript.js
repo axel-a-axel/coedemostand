@@ -168,4 +168,3 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateElements, 2000);
 });
 
-
