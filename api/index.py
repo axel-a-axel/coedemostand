@@ -141,6 +141,11 @@ def cells9():
     return render_template("cells9.html")
 
 
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
 @app.route('/get_content', methods=['GET'])
 def get_content():
     try:

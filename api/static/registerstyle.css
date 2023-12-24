@@ -1,83 +1,131 @@
-/* Apply CSS styles to the form and its components */
+.register-body {
 
-/* Apply CSS styles to the form and its components */
-.signup-form-container {
-    width: 70%;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 130vh;
+}
+
+
+
+.form-container {
+    width: 50%;
+    padding: 20px;
     background-color: #fff;
     border: 2px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: auto; /* Center the form horizontally */
+    margin-top: 20px;
+
 }
 
-.form-title {
+#registration-form h2 {
     text-align: center;
-    margin-bottom: 20px; /* Add margin to title */
 }
 
-.form-group {
+.input-group {
     margin-bottom: 15px;
-    text-align: center; /* Center the form elements */
+    text-align: center; /* Align input fields to center */
 }
 
-.form-field {
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: -15px;
+}
+
+#registration-form input {
     width: 80%;
     padding: 8px;
     box-sizing: border-box;
-    margin: 0 auto; /* Center the text input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
 
-.checkboxes-group,
-.radiobuttons-group {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.form-checkbox,
-.form-radio {
-    margin-right: 5px;
-    display: inline-block; /* Display each checkbox on a new line */
-}
-
-.form-buttons {
-    text-align: center;
+.checkbox-group,
+.radio-group {
     margin-top: 15px;
+
 }
 
-/* Add more styles as needed */
+.checkbox-group label,
+.radio-group label {
+    display: flex;
+    align-items: center; /* Align the items vertically in the flex container */
+    margin-bottom: 5px; /* Adjust the margin to control space between checkbox/radiobox and text */
+}
 
-.submit-button {
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Align buttons to the horizontal center */
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#cancel-btn {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#submit-btn {
     border: 1px solid #ccc;
     background-color: #fff;
     color: #333;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+}
+.checkbox-group input,
+.radio-group input {
+    margin-right: 5px; /* Adjust the margin to control space between checkbox/radiobox and text */
 }
 
-.cancel-button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 10px;
+
+/* title style */
+
+@keyframes creep {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-/* Add more styles as needed */
-/* Add this style for the success modal */
-.success-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: block;
-    z-index: 1000;
+.title-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: creep 10s infinite linear;
+}
+
+.title-animation span {
+  display: inline-block;
+  white-space: pre;
+  animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
