@@ -11,9 +11,17 @@
     margin: auto; /* Center the form horizontally */
 }
 
-.form-title {
+.form-title,
+.form-title2 {
     text-align: center;
     margin-bottom: 20px; /* Add margin to title */
+}
+
+.form-title3 {
+    text-align: center;
+    margin-bottom: 20px; /* Add margin to title */
+    color: gray;
+    font-size: 0.9em;
 }
 
 .form-group {
@@ -81,3 +89,5 @@
     display: block;
     z-index: 1000;
 }
+
+

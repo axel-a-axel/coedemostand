@@ -1,170 +1,163 @@
-document.addEventListener('DOMContentLoaded', function () {
-
-
-    const cancelButton = document.querySelector('.cancel-button');
-    cancelButton.addEventListener('click', clearForm);
-});
-
-function setCookies() {
-    const formFields = document.querySelectorAll('.form-field');
-    formFields.forEach((field) => {
-        document.cookie = `${field.id}=${field.value}`;
-    });
-}
-
-function clearForm() {
-    const formFields = document.querySelectorAll('.form-field');
-    formFields.forEach((field) => {
-        field.value = '';
-
-        // Uncheck checkboxes
-        document.querySelectorAll('.form-checkbox').forEach(function (checkbox) {
-            checkbox.checked = false;
-        });
-
-        // Uncheck radio buttons
-        document.querySelectorAll('.form-radio').forEach(function (radio) {
-            radio.checked = false;
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Other script code
-
-    // Function to handle the submit action
-    function handleSubmit() {
-        // Set cookies
-        document.querySelectorAll('.form-field').forEach(function (field) {
-            document.cookie = field.id + '=' + field.value + ';path=/';
-        });
-
-        // Display success modal
-        var successModal = document.createElement('div');
-        successModal.className = 'success-modal';
-        successModal.innerHTML = 'Success!';
-        document.body.appendChild(successModal);
-
-        // Close success modal after a few seconds
-        setTimeout(function () {
-            successModal.style.display = 'none';
-        }, 2000);
-
-        // Clear input fields one by one after the modal closes
-        setTimeout(function () {
-            document.querySelectorAll('.form-field').forEach(function (field) {
-                field.value = '';
-            });
-        }, 2500);
-    }
-
-    // Event listener for the Submit button
-    const submitButton = document.querySelector('.submit-button');
-    submitButton.addEventListener('click', handleSubmit);
-
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     // List of field names
     const fieldNames = [
-        "Your second email",
-        "What day is today?",
-        "Last 4 digits of Pi",
-        "42 or not 42",
-        "What were you doing on 23 June 2007 at 16:52?"
+        "Your 14th Name",
+        "Your favorite tabletop game",
+        "Your favorite meal",
+        "Your favorite soup",
+        "Your favorite soap",
+        "Is it okay to add random questions to the registration form?",
+        "What will we do with a drunken sailor early in the morning?",
+        "What are you thinking about rn?",
+        "Would you sign up if this site was a worm?",
+        "Your favorite question",
+        "If you were a kitten, which one would you be?",
+        "Country you are NOT currently in",
+        "Your favorite Santa's deer",
+        "Are you on Facebook? Why?",
+        "Which part of cat video do you like most?",
+        "Are you going to pass this task?",
+        "Just a placeholder",
+        "More than a placeholder",
+        "Who was in Paris?",
+        "To be or not to be?",
+        "Beep boop boop beep bzzzt",
+        "Preferred superhero sidekick",
+        "Signature dance move",
+        "Do pineapples belong on pizza?",
+        "Your secret pirate name",
+        "Song you choose for karaoke?",
+        "Despasito or Gangnam style?",
+        "JSON or XML",
+        "Current time in Alaska"
     ];
 
-    // List of checkbox names
-    const checkboxNames = [
-        "I want coffee",
-        "I like this task!",
-        "I'll change my email after I sign up",
-        "I'm really just a script"
-    ];
-
-    // Function to create a div with the given class and ID
-    function createDiv(classname, id) {
-        const div = document.createElement('div');
-        div.className = classname;
-        if (id) {
-            div.id = id;
+    // Function to shuffle array elements randomly
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
-        return div;
     }
 
-    // Function to randomly pick and add/remove elements
-    function updateElements() {
-        // Pick random field and checkbox names
-        const randomFieldName = fieldNames[Math.floor(Math.random() * fieldNames.length)];
-        const randomCheckboxName = checkboxNames[Math.floor(Math.random() * checkboxNames.length)];
+    // Select 5-15 random fields from the list
+    shuffleArray(fieldNames);
+    const selectedFields = fieldNames.slice(0, Math.floor(Math.random() * 11) + 7);
 
-        // Check if the field and checkbox exist
-        const fieldExists = document.getElementById(randomFieldName);
-        const checkboxExists = document.querySelector(`input[type="checkbox"][value="${randomCheckboxName}"]`);
+    // Add selected fields to the form
+    const form = document.getElementById("inputs-container");
+    selectedFields.forEach((fieldName) => {
+        const input = document.createElement("input");
+        input.type = "text";
+        input.classList.add("form-field");
+        input.name = fieldName.toLowerCase().replace(/\s/g, "_"); // Convert field name to lowercase and replace spaces with underscores
+        input.placeholder = fieldName;
+        input.required = true;
 
-        // If they exist, remove them along with labels and line breaks
-        if (fieldExists) {
-            fieldExists.parentNode.removeChild(fieldExists);
-        }
-        if (checkboxExists) {
-            const checkboxLabel = checkboxExists.nextElementSibling;
-            if (checkboxLabel && checkboxLabel.tagName.toLowerCase() === 'label') {
-                const brTagId = `${randomCheckboxName}-br`;
-                const brTag = document.getElementById(brTagId);
-                if (brTag) {
-                    brTag.parentNode.removeChild(brTag);
-                }
-                checkboxLabel.parentNode.removeChild(checkboxLabel);
+
+
+        const div = document.createElement("div");
+        div.classList.add("form-group");
+
+        div.appendChild(input);
+
+        form.appendChild(div);
+    });
+
+    // Function to start the 15-second timer (15000)
+    function startTimer() {
+        setTimeout(() => {
+            location.reload(); // Refresh the page after 15 seconds
+        }, 1215000);
+    }
+
+    startTimer(); // Start the timer when the page is loaded
+
+    // Event listener for the Submit button
+    const submitButton = document.getElementById("submit-btn");
+    submitButton.addEventListener("click", function () {
+        // Create cookies for filled fields
+        selectedFields.forEach((fieldName) => {
+            const input = document.querySelector(`[name="${fieldName.toLowerCase().replace(/\s/g, "_")}"]`);
+            if (input) {
+                document.cookie = `${fieldName}=${input.value}`;
             }
-            checkboxExists.parentNode.removeChild(checkboxExists);
-        }
+        });
 
-        // If they don't exist, add them to the bottom of the form and checkbox group
-        else {
-            // Create a div with class "form-group" and ID based on the field name
-            const newFieldGroup = createDiv('form-group', randomFieldName);
+        // Display a success modal
+        showModal("Success!", "Your registration was successful!");
+    });
 
-            // Create new input field
-            const newField = document.createElement('input');
-            newField.type = 'text';
-            newField.id = randomFieldName;
-            newField.placeholder = randomFieldName;
-            newField.className = 'form-field';
-            newField.required = true;
+    // Event listener for the Cancel button
+    const cancelButton = document.getElementById("cancel-btn");
+    cancelButton.addEventListener("click", function () {
+        // Clear all filled fields
+        selectedFields.forEach((fieldName) => {
+            const input = document.querySelector(`[name="${fieldName.toLowerCase().replace(/\s/g, "_")}"]`);
+            if (input) {
+                input.value = "";
+            }
+        });
+    });
 
-            // Append new field to the form group
-            newFieldGroup.appendChild(newField);
+    // Function to display a modal
+    function showModal(title, text) {
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
 
-            // Append the form group to the form
-            document.getElementById('inputs-container').appendChild(newFieldGroup);
+        const modalContent = `
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>${title}</h2>
+                <p>${text}</p>
+            </div>
+        `;
 
-            // Create a div with class "form-group" and ID based on the checkbox name
-            const newCheckboxGroup = createDiv('form-group', randomCheckboxName);
+        modal.innerHTML = modalContent;
 
-// Create new checkbox
-            const newCheckbox = document.createElement('input');
-            newCheckbox.type = 'checkbox';
-            newCheckbox.value = randomCheckboxName;
-            newCheckbox.required = true;
+        document.body.appendChild(modal);
 
-            // Create line break with ID for the checkbox
-            const brTagId = `${randomCheckboxName}-br`;
-            const lineBreak = document.createElement('br');
-            lineBreak.id = brTagId;
+        // Close the modal when the close button is clicked
+        const closeButton = modal.querySelector(".close");
+        closeButton.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
 
-            // Create label for the checkbox
-            const checkboxLabel = document.createElement('label');
-            checkboxLabel.appendChild(document.createTextNode(randomCheckboxName));
-
-            // Append line break, new checkbox, and label to the checkbox group
-            document.getElementById('checkboxes-group').appendChild(lineBreak);
-            document.getElementById('checkboxes-group').appendChild(newCheckbox);
-            document.getElementById('checkboxes-group').appendChild(checkboxLabel);
-        }
+        // Close the modal when clicking outside the modal content
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     }
-
-    // Execute updateElements every 2 seconds
-    setInterval(updateElements, 2000);
 });
 
+
+// timer code
+
+ document.addEventListener("DOMContentLoaded", function () {
+    // Your existing JavaScript code
+    var formTitle = document.querySelector(".form-title");
+    var milliseconds = 0;
+    var seconds = 15;
+
+    // Function to update the timer
+    function updateTimer() {
+      formTitle.textContent = "Time left: " + seconds + "s " + milliseconds + "ms";
+
+      if (seconds === 0 && milliseconds === 0) {
+        // Perform actions when the timer reaches 0 (e.g., refresh the page)
+        location.reload();
+      } else {
+        if (milliseconds === 0) {
+          seconds--;
+          milliseconds = 1000;
+        }
+        milliseconds -= 100;
+        setTimeout(updateTimer, 100);
+      }
+    }
+
+    // Start the timer
+    updateTimer();
+  });

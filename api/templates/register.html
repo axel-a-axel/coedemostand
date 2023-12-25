@@ -12,7 +12,13 @@
 <body>
 {% include "header.html" %}
     <div class="signup-form-container">
+        <h1 class="form-title2">Register quickly!</h1>
         <h1 class="form-title">Register now!</h1>
+        <h1 class="form-title3">Sometimes web pages have huge data entry forms that you're too lazy to fill out
+            manually, and your browser's built-in tools or extensions can't handle it - no one was prepared that you
+            might be asked for your secret pirate name. Alternatively, the page could contain a 15 second timer as a
+            learning convention. Use JavaScript to fill in all the fields in time, and don't forget about emails!</h1>
+        <h1 class="form-title3">P.S. Do not break timer code, this will not be counted as a solution</h1>
         <form id="signup-form">
             <div id="inputs-container">
             <div class="form-group">
@@ -95,11 +101,11 @@
                 </label>
             </div>
             <div class="form-buttons">
-                <button type="submit" class="submit-button">Submit</button>
-                <button type="button" class="cancel-button">Cancel</button>
+                <button type="submit" id="submit-btn" class="submit-button">don't Cancel</button>
+                <button type="button" id="cancel-btn" class="cancel-button">don't Submit</button>
             </div>
         </form>
+
     </div>
->
 </body>
 </html>
