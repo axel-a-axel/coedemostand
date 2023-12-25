@@ -1,3 +1,45 @@
+function handleSubmit(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  var inputFields = document.querySelectorAll("input");
+  var formData = {};
+
+  inputFields.forEach(function (field) {
+    formData[field.name] = field.value;
+
+    // Simulate setting cookies with form data
+    document.cookie = `${field.name}=${field.value}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+  });
+   stopTimer = true;
+  // Display success modal (commented out, you can add the code later)
+  // displaySuccessModal();
+
+  // Stop the timer (you can insert your timer stopping code here)
+  //clearInterval(timerInterval);
+}
+
+// Add an event listener to the form
+
+
+function handleCancel() {
+  // Clear all filled fields
+  var formFields = document.querySelectorAll("input");
+  formFields.forEach(function (field) {
+    if (field.type === "checkbox" || field.type === "radio") {
+      field.checked = false;
+    } else {
+      field.value = "";
+    }
+  });
+}
+
+var stopTimer = false;
+
+document.addEventListener("DOMContentLoaded", function () {
+//document.getElementById("submit-btn").addEventListener("click", handleSubmit);
+document.getElementById("cancel-btn").addEventListener("click", handleCancel);
+document.getElementById("signup-form").addEventListener("submit", handleSubmit);
+  });
 document.addEventListener("DOMContentLoaded", function () {
     // List of field names
     const fieldNames = [
@@ -64,79 +106,17 @@ document.addEventListener("DOMContentLoaded", function () {
         form.appendChild(div);
     });
 
-    // Function to start the 15-second timer (15000)
-    function startTimer() {
-        setTimeout(() => {
-            location.reload(); // Refresh the page after 15 seconds
-        }, 1215000);
-    }
 
-    startTimer(); // Start the timer when the page is loaded
 
-    // Event listener for the Submit button
-    const submitButton = document.getElementById("submit-btn");
-    submitButton.addEventListener("click", function () {
-        // Create cookies for filled fields
-        selectedFields.forEach((fieldName) => {
-            const input = document.querySelector(`[name="${fieldName.toLowerCase().replace(/\s/g, "_")}"]`);
-            if (input) {
-                document.cookie = `${fieldName}=${input.value}`;
-            }
-        });
 
-        // Display a success modal
-        showModal("Success!", "Your registration was successful!");
-    });
 
-    // Event listener for the Cancel button
-    const cancelButton = document.getElementById("cancel-btn");
-    cancelButton.addEventListener("click", function () {
-        // Clear all filled fields
-        selectedFields.forEach((fieldName) => {
-            const input = document.querySelector(`[name="${fieldName.toLowerCase().replace(/\s/g, "_")}"]`);
-            if (input) {
-                input.value = "";
-            }
-        });
-    });
-
-    // Function to display a modal
-    function showModal(title, text) {
-        const modal = document.createElement("div");
-        modal.classList.add("modal");
-
-        const modalContent = `
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>${title}</h2>
-                <p>${text}</p>
-            </div>
-        `;
-
-        modal.innerHTML = modalContent;
-
-        document.body.appendChild(modal);
-
-        // Close the modal when the close button is clicked
-        const closeButton = modal.querySelector(".close");
-        closeButton.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        // Close the modal when clicking outside the modal content
-        window.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    }
 });
 
 
 // timer code
 
  document.addEventListener("DOMContentLoaded", function () {
-    // Your existing JavaScript code
+
     var formTitle = document.querySelector(".form-title");
     var milliseconds = 0;
     var seconds = 15;
@@ -147,8 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (seconds === 0 && milliseconds === 0) {
         // Perform actions when the timer reaches 0 (e.g., refresh the page)
+        if (!stopTimer) {
+        // If the timer wasn't stopped due to form submission, refresh the page
+
         location.reload();
-      } else {
+      }
+       }
+       else {
         if (milliseconds === 0) {
           seconds--;
           milliseconds = 1000;
@@ -158,6 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Start the timer
+
     updateTimer();
   });
